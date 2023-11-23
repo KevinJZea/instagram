@@ -1,0 +1,13 @@
+.Icon,
+.icon {
+  width: 32px;
+  height: 32px;
+}
+
+@media (max-width: 380px) {
+  .Icon,
+  .icon {
+    width: 28px;
+    height: 28px;
+  }
+}
