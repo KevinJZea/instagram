@@ -1,0 +1,109 @@
+.Navbar {
+  background-color: hsl(0, 0%, 100%);
+}
+
+.Navbar--logo-container {
+  height: 92px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.Navbar--icons-container {
+  padding: 0;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.Navbar--icon-container {
+  list-style: none;
+}
+
+.Navbar--icon-link {
+  color: hsl(0, 0%, 0%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.Navbar--icon-title,
+.Navbar--more-icon-container {
+  display: none;
+}
+
+.Navbar--profile-img {
+  border-radius: 50%;
+  width: 32px;
+}
+
+.Navbar--more-icon-container {
+  width: 100%;
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+
+.Navbar--icon-link {
+  padding: 12px;
+  border-radius: 8px;
+}
+
+@media (max-width: 767px) {
+  .Navbar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+
+  .Navbar--logo-container {
+    display: none;
+  }
+
+  .Navbar--icon-container.hide-sm {
+    display: none;
+  }
+}
+
+@media (min-width: 768px) {
+  .Navbar {
+    min-height: 100vh;
+    padding: 8px 12px 20px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .Navbar--icons-container {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 4px;
+    flex: 1;
+  }
+
+  .Navbar--icon-link:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+  }
+
+  .Navbar--icon-link .Icon,
+  .Navbar--icon-link .icon {
+    width: 24px;
+    height: 24px;
+  }
+
+  .Navbar--profile-img {
+    width: 28px;
+  }
+
+  .Navbar--more-icon-container {
+    display: block;
+  }
+}
+
+@media (min-width: 1264px) {
+  .Navbar--icon-title {
+    display: inline-block;
+  }
+}
