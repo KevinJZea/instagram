@@ -3,10 +3,14 @@ export const ICONS = {
   CREATE: 'create',
   EXPLORE: 'explore',
   HEART: 'heart',
+  HEART_FILLED: 'heart_filled',
   HOME: 'home',
   INSTAGRAM: 'instagram',
   MENU: 'menu',
+  MESSENGER: 'messenger',
   SEARCH: 'search',
+  SEND: 'send',
+  VERIFICATION: 'verification',
 };
 
 export const PROFILE_IMAGE_URL =

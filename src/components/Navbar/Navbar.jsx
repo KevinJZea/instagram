@@ -1,4 +1,3 @@
-import { Suspense } from 'react';
 import { Icon } from '../Icon';
 import { ICONS, PROFILE_IMAGE_URL } from '../../utils/constants';
 import './Navbar.css';
@@ -28,7 +27,7 @@ const icons = [
     title: 'New post',
   },
   {
-    name: ICONS.BUBBLE_CHAT,
+    name: ICONS.MESSENGER,
     title: 'Messages',
   },
 ];
@@ -77,13 +76,11 @@ export function Navbar() {
 
 function NavbarIcon({ name }) {
   return (
-    <Suspense fallback={<p>Loading...</p>}>
-      <a
-        href="#"
-        className="Navbar--icon-link"
-      >
-        <Icon name={name} />
-      </a>
-    </Suspense>
+    <a
+      href="#"
+      className="Navbar--icon-link"
+    >
+      <Icon name={name} />
+    </a>
   );
 }
