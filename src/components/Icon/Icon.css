@@ -11,3 +11,16 @@
     height: 28px;
   }
 }
+
+.icon--verification {
+  width: auto;
+  height: auto;
+}
+
+.Icon:has(.icon--verification) {
+  display: inline-flex;
+  align-items: center;
+  margin-left: 4px;
+  width: min-content;
+  height: min-content;
+}
