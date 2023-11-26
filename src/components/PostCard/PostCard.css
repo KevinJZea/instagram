@@ -1,0 +1,147 @@
+.PostCard {
+  max-width: 500px;
+  width: 100%;
+  padding: 0 4px 16px;
+  border-bottom: 1px solid hsl(0, 0%, 86%);
+  margin-bottom: 20px;
+}
+
+.PostCard--header {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.PostCard--profile-pic {
+  border-radius: 50%;
+}
+.PostCard--profile-pic:after {
+  border-radius: 50%;
+  border: 1px solid hsla(0, 0%, 0%, 0.098);
+  position: absolute;
+}
+
+.PostCard--header-info-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.PostCard--header-user-info-container {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.PostCard--username {
+  word-wrap: break-word;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.PostCard--timeago {
+  font-weight: 400;
+  font-size: 14px;
+  color: hsl(0, 0%, 45%);
+  word-wrap: break-word;
+}
+
+.PostCard--location {
+  font-weight: 400;
+  font-size: 12px;
+}
+
+.PostCard--image-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.PostCard--main-image {
+  object-fit: cover;
+}
+
+.PostCard--icons-container {
+  margin: 12px 0;
+  display: flex;
+  gap: 16px;
+}
+.PostCard--icons-container.liked .icon--heart-filled {
+  fill: hsl(355, 100%, 59%);
+  color: hsl(355, 100%, 59%);
+}
+
+.PostCard--icons-container .Icon,
+.PostCard--icons-container .icon {
+  color: hsl(0, 0%, 0%);
+  width: 24px;
+  height: 24px;
+}
+
+.PostCard--icon-button {
+  background: none;
+  border: none;
+  outline: none;
+  padding: 0;
+}
+.PostCard--icon-button:hover {
+  opacity: 0.7;
+}
+
+.PostCard--likes-container {
+  color: hsl(0, 0%, 0%);
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.PostCard--description-container {
+  margin-top: 8px;
+  gap: 4px;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.PostCard--description {
+  margin-left: 4px;
+  display: inline;
+}
+
+.PostCard--form {
+  margin-top: 8px;
+  display: flex;
+  align-items: center;
+}
+
+.PostCard--input {
+  height: 24px;
+  max-width: 100%;
+  font-size: 14px;
+  padding: 0;
+  border: none;
+  outline: none;
+  resize: none;
+  display: flex;
+  flex-grow: 1;
+}
+
+.PostCard--post-button {
+  margin: 0 12px;
+  padding: 0;
+  background: none;
+  border: none;
+  outline: none;
+  font-weight: 600;
+  font-size: 14px;
+  text-overflow: ellipsis;
+  appearance: none;
+  color: hsl(204, 100%, 48%);
+}
+.PostCard--post-button:hover {
+  color: hsl(209, 100%, 21%);
+}
+
+.PostCard--post-button.invisible {
+  visibility: hidden;
+}
