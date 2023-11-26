@@ -1,9 +1,13 @@
+import { useState } from 'react';
+import { DetailPortal } from './components/DetailPortal';
 import { Navbar } from './components/Navbar';
 import { PostCard } from './components/PostCard';
 import { data } from './utils/data';
 import './App.css';
 
 function App() {
+  const [postSelected, setPostSelected] = useState(null);
+
   return (
     <>
       <Navbar />
@@ -14,6 +18,7 @@ function App() {
             {data.posts.map((post) => (
               <PostCard
                 key={post.id}
+                selectPost={() => setPostSelected(post)}
                 {...post}
               />
             ))}
@@ -21,6 +26,7 @@ function App() {
         </div>
         <div className="Info"></div>
       </main>
+      {postSelected ? <DetailPortal postData={postSelected} /> : null}
     </>
   );
 }

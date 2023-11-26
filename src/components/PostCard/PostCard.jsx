@@ -12,6 +12,7 @@ export function PostCard({
   imageUrl,
   likes,
   location,
+  selectPost,
 }) {
   const [commentValue, setCommentValue] = useState('');
   const [postLiked, setPostLiked] = useState(false);
@@ -56,7 +57,10 @@ export function PostCard({
         </div>
       </div>
 
-      <picture className="PostCard--image-container">
+      <button
+        className="PostCard--image-container"
+        onClick={selectPost}
+      >
         <img
           className="PostCard--main-image"
           src={imageUrl}
@@ -64,7 +68,7 @@ export function PostCard({
           height={490}
           alt="Image"
         />
-      </picture>
+      </button>
       <section className="PostCard--info-container">
         <div
           className={`PostCard--icons-container ${postLiked ? 'liked' : ''}`}

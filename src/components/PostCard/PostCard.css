@@ -57,6 +57,9 @@
   width: 100%;
   display: flex;
   justify-content: center;
+  border: none;
+  outline: none;
+  background: none;
 }
 
 .PostCard--main-image {
@@ -70,7 +73,6 @@
 }
 .PostCard--icons-container.liked .icon--heart-filled {
   fill: hsl(355, 100%, 59%);
-  color: hsl(355, 100%, 59%);
 }
 
 .PostCard--icons-container .Icon,
