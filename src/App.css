@@ -5,6 +5,22 @@
 }
 
 .Main {
-  background-color: antiquewhite;
+  padding: 20px 0;
+  height: 100vh;
   flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.Feed {
+  height: 100%;
+  width: 100%;
+  max-width: 630px;
+  overflow: scroll;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.Feed::-webkit-scrollbar {
+  display: none;
 }
