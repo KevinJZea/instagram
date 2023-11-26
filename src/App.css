@@ -24,3 +24,9 @@
 .Feed::-webkit-scrollbar {
   display: none;
 }
+
+.PostsContainer {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}

@@ -1,11 +1,12 @@
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import { Icon } from '../Icon';
 import { ICONS } from '../../utils/constants';
-import { formatLikes, timeAgo } from '../../utils/helpers';
+import { createRandomID, formatLikes, timeAgo } from '../../utils/helpers';
 import './PostCard.css';
 
 export function PostCard({
   author,
+  comments,
   createdAt = new Date(),
   description,
   imageUrl,
@@ -14,9 +15,25 @@ export function PostCard({
 }) {
   const [commentValue, setCommentValue] = useState('');
   const [postLiked, setPostLiked] = useState(false);
+  const [postComments, setPostComments] = useState(comments);
 
-  const handleCommentValue = (event) => setCommentValue(event.target.value);
+  const commentInput = useRef(null);
+
+  const handleCommentValue = () => setCommentValue(commentInput.current.value);
   const handleLike = () => setPostLiked((previousValue) => !previousValue);
+  const handleFocusInput = () => commentInput.current.focus();
+  const handleNewComment = (event) => {
+    event.preventDefault();
+    setPostComments((prevComments) => [
+      ...prevComments,
+      {
+        author: { username: 'kevinjzea', verified: true },
+        message: commentValue,
+        id: createRandomID(10),
+      },
+    ]);
+    setCommentValue('');
+  };
 
   return (
     <article className="PostCard">
@@ -66,6 +83,7 @@ export function PostCard({
           <button
             className="PostCard--icon-button"
             type="button"
+            onClick={handleFocusInput}
           >
             <Icon name={ICONS.BUBBLE_CHAT} />
           </button>
@@ -84,12 +102,28 @@ export function PostCard({
           {author.verified ? <Icon name={ICONS.VERIFICATION} /> : null}
           <p className="PostCard--description">{description}</p>
         </div>
-        <form className="PostCard--form">
+        <div className="PostCard--comments-container">
+          {postComments.map(({ id, author, message }) => (
+            <div
+              key={id}
+              className="PostCard--comment"
+            >
+              <span className="PostCard--username">{author.username}</span>
+              {author.verified ? <Icon name={ICONS.VERIFICATION} /> : null}
+              <p className="PostCard--comment-message">{message}</p>
+            </div>
+          ))}
+        </div>
+        <form
+          className="PostCard--form"
+          onSubmit={handleNewComment}
+        >
           <textarea
             autoComplete="off"
             autoCorrect="off"
             className="PostCard--input"
             placeholder="Add a comment..."
+            ref={commentInput}
             type="text"
             value={commentValue}
             onChange={handleCommentValue}
