@@ -1,0 +1,98 @@
+.DetailPortal--background {
+  position: fixed;
+  inset: 0;
+  z-index: 9;
+  background-color: hsla(0, 0%, 0%, 0.65);
+}
+
+.DetailPortal--container {
+  position: fixed;
+  inset: 0;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.DetailPortal {
+  background-color: hsl(0, 0%, 96%);
+  border-radius: 4px;
+  max-width: 320px;
+  flex: 1;
+}
+
+.DetailPortal--header {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  border-bottom: 1px solid hsl(0, 0%, 94%);
+  padding: 14px 16px;
+  gap: 12px;
+}
+
+.DetailPortal--profile-pic {
+  border-radius: 50%;
+}
+.DetailPortal--profile-pic:after {
+  border-radius: 50%;
+  border: 1px solid hsla(0, 0%, 0%, 0.098);
+  position: absolute;
+}
+
+.DetailPortal--header-info-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.DetailPortal--header-user-info-container {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.DetailPortal--username {
+  word-wrap: break-word;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.DetailPortal--main-image {
+  width: 100%;
+}
+
+.DetailPortal--info-container {
+  padding: 12px 16px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.DetailPortal--icons-container {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  margin-bottom: 10px;
+  margin-top: 8px;
+}
+
+.DetailPortal--icons-container .Icon,
+.DetailPortal--icons-container .icon {
+  width: 24px;
+  height: 24px;
+}
+
+.DetailPortal--likes-container {
+  height: min-content;
+}
+.DetailPortal--likes {
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 14px;
+}
+
+.DetailPortal--timestamp {
+  font-size: 10px;
+  font-weight: 400;
+  color: hsl(0, 0%, 45%);
+}

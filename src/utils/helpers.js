@@ -36,3 +36,8 @@ export function timeAgo(date) {
   if (minutes > 0) return `${minutes} m`;
   return `${seconds} s`;
 }
+
+export function formatDate(date) {
+  const options = { month: 'long', day: 'numeric', year: 'numeric' };
+  return date.toLocaleDateString('en-US', options).toUpperCase();
+}

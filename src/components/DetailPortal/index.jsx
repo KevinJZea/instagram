@@ -1,0 +1,1 @@
+export { DetailPortal } from './DetailPortal';
