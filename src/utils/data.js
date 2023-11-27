@@ -28,6 +28,7 @@ export const data = {
       ],
       likes: 75644374,
       location: 'Lusail Stadium',
+      postLiked: false,
     },
     {
       id: createRandomID(6),
@@ -47,6 +48,7 @@ export const data = {
       ],
       likes: 17965750,
       location: null,
+      postLiked: false,
     },
     {
       id: createRandomID(6),
@@ -68,6 +70,7 @@ export const data = {
       ],
       likes: 60209779,
       location: null,
+      postLiked: false,
     },
     {
       id: createRandomID(6),
@@ -87,6 +90,7 @@ export const data = {
       ],
       likes: 6705479,
       location: null,
+      postLiked: false,
     },
     {
       id: createRandomID(6),
@@ -106,6 +110,7 @@ export const data = {
       ],
       likes: 25223138,
       location: null,
+      postLiked: false,
     },
     {
       id: createRandomID(6),
@@ -125,6 +130,7 @@ export const data = {
       ],
       likes: 54721708,
       location: null,
+      postLiked: false,
     },
     {
       id: createRandomID(6),
@@ -141,6 +147,7 @@ export const data = {
       imageUrl: ['https://pbs.twimg.com/media/Fh8lWD4XoAAr_xa.jpg:large'],
       likes: 42775866,
       location: null,
+      postLiked: false,
     },
   ],
 };

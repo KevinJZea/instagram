@@ -12,10 +12,11 @@ export function PostCard({
   imageUrl,
   likes,
   location,
+  postLiked = false,
+  setPostLiked,
   selectPost,
 }) {
   const [commentValue, setCommentValue] = useState('');
-  const [postLiked, setPostLiked] = useState(false);
   const [postComments, setPostComments] = useState(comments);
 
   const commentInput = useRef(null);

@@ -6,7 +6,16 @@ import { data } from './utils/data';
 import './App.css';
 
 function App() {
-  const [postSelected, setPostSelected] = useState(null);
+  const [posts, setPosts] = useState(data.posts);
+  const [postSelectedID, setPostSelectedID] = useState(null);
+
+  const handleLike = (postId) => {
+    setPosts((prevPosts) =>
+      prevPosts.map((post) =>
+        post.id === postId ? { ...post, postLiked: !post.postLiked } : post
+      )
+    );
+  };
 
   return (
     <>
@@ -15,10 +24,11 @@ function App() {
         <div className="Feed">
           <div className="StoriesContainer"></div>
           <div className="PostsContainer">
-            {data.posts.map((post) => (
+            {posts.map((post) => (
               <PostCard
                 key={post.id}
-                selectPost={() => setPostSelected(post)}
+                selectPost={() => setPostSelectedID(post.id)}
+                setPostLiked={() => handleLike(post.id)}
                 {...post}
               />
             ))}
@@ -26,10 +36,11 @@ function App() {
         </div>
         <div className="Info"></div>
       </main>
-      {postSelected ? (
+      {postSelectedID ? (
         <DetailPortal
-          deselectPost={() => setPostSelected(null)}
-          postData={postSelected}
+          deselectPost={() => setPostSelectedID(null)}
+          postData={posts.find((post) => post.id === postSelectedID)}
+          setPostLiked={() => handleLike(postSelectedID)}
         />
       ) : null}
     </>
