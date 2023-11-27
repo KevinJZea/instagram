@@ -60,10 +60,15 @@
   border: none;
   outline: none;
   background: none;
+  padding: 0;
 }
 
 .PostCard--main-image {
   object-fit: cover;
+  width: 100%;
+  max-width: 490px;
+  max-height: 490px;
+  aspect-ratio: 1/1;
 }
 
 .PostCard--icons-container {

@@ -5,6 +5,7 @@ import { createRandomID, formatLikes, timeAgo } from '../../utils/helpers';
 import './PostCard.css';
 
 export function PostCard({
+  altText = '',
   author,
   comments,
   createdAt = new Date(),
@@ -65,9 +66,7 @@ export function PostCard({
         <img
           className="PostCard--main-image"
           src={imageUrl}
-          width={490}
-          height={490}
-          alt="Image"
+          alt={altText}
         />
       </button>
       <section className="PostCard--info-container">

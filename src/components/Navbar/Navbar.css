@@ -9,6 +9,12 @@
   justify-content: center;
 }
 
+.Navbar--logo-title {
+  display: none;
+  padding: 0 12px 0 0;
+  margin: 0;
+}
+
 .Navbar--icons-container {
   padding: 0;
   margin: 0;
@@ -99,10 +105,28 @@
 
   .Navbar--more-icon-container {
     display: block;
+    text-align: center;
   }
 }
 
 @media (min-width: 1264px) {
+  .Navbar--logo-title {
+    display: block;
+  }
+
+  .Navbar--icons-container {
+    align-items: flex-start;
+  }
+
+  .Navbar--more-icon-container,
+  .Navbar--icon-container {
+    display: flex;
+    align-items: center;
+  }
+
+  .Navbar--more-icon-container {
+    justify-content: flex-start;
+  }
   .Navbar--icon-title {
     display: inline-block;
   }

@@ -37,6 +37,7 @@ export function Navbar() {
     <nav className="Navbar">
       <div className="Navbar--logo-container">
         <NavbarIcon name={ICONS.INSTAGRAM} />
+        <h2 className="Navbar--logo-title">Instagram</h2>
       </div>
       <ul className="Navbar--icons-container">
         {icons.map((icon) => (
