@@ -1,9 +1,14 @@
 #root {
-  display: flex;
   min-height: 100vh;
   min-height: 100dvh;
   color: hsl(0, 0%, 0%);
   user-select: none;
+}
+
+@media (min-width: 500px) {
+  #root {
+    display: flex;
+  }
 }
 
 .Main {
