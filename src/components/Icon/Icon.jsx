@@ -3,6 +3,7 @@ import { ICONS } from '../../utils/constants';
 import './Icon.css';
 
 const BubbleChat = lazy(() => import('../../assets/svg/bubble_chat.svg?react'));
+const Close = lazy(() => import('../../assets/svg/close.svg?react'));
 const Create = lazy(() => import('../../assets/svg/create.svg?react'));
 const Explore = lazy(() => import('../../assets/svg/explore.svg?react'));
 const Heart = lazy(() => import('../../assets/svg/heart.svg?react'));
@@ -17,6 +18,7 @@ const Verification = lazy(() => import('../../assets/svg/verification.svg?react'
 
 const icons = {
   [ICONS.BUBBLE_CHAT]: <BubbleChat />,
+  [ICONS.CLOSE]: <Close />,
   [ICONS.CREATE]: <Create />,
   [ICONS.EXPLORE]: <Explore />,
   [ICONS.HEART]: <Heart />,

@@ -26,7 +26,12 @@ function App() {
         </div>
         <div className="Info"></div>
       </main>
-      {postSelected ? <DetailPortal postData={postSelected} /> : null}
+      {postSelected ? (
+        <DetailPortal
+          deselectPost={() => setPostSelected(null)}
+          postData={postSelected}
+        />
+      ) : null}
     </>
   );
 }
