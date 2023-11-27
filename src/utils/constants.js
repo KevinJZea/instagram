@@ -1,5 +1,6 @@
 export const ICONS = {
   BUBBLE_CHAT: 'bubble_chat',
+  CLOSE: 'close',
   CREATE: 'create',
   EXPLORE: 'explore',
   HEART: 'heart',
