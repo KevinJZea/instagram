@@ -4,7 +4,7 @@ import { ICONS } from '../../utils/constants';
 import { formatDate, formatLikes } from '../../utils/helpers';
 import './DetailPortal.css';
 
-export function DetailPortal({ postData, deselectPost }) {
+export function DetailPortal({ postData, deselectPost, setPostLiked }) {
   const handleClickOnPortal = (event) => {
     event.stopPropagation();
   };
@@ -70,22 +70,25 @@ export function DetailPortal({ postData, deselectPost }) {
               />
             </picture>
             <section className="DetailPortal--info-container">
-              <div className="DetailPortal--icons-container">
+              <div
+                className={`PostCard--icons-container ${
+                  postData.postLiked ? 'liked' : ''
+                }`}
+              >
                 <button
                   className="PostCard--icon-button"
                   type="button"
-                  /* onClick={handleLike} */
+                  onClick={setPostLiked}
                 >
-                  {
-                    /* postLiked ? (
-              <Icon name={ICONS.HEART_FILLED} />
-            ) : */ <Icon name={ICONS.HEART} />
-                  }
+                  {postData.postLiked ? (
+                    <Icon name={ICONS.HEART_FILLED} />
+                  ) : (
+                    <Icon name={ICONS.HEART} />
+                  )}
                 </button>
                 <button
                   className="PostCard--icon-button"
                   type="button"
-                  /* onClick={handleFocusInput} */
                 >
                   <Icon name={ICONS.BUBBLE_CHAT} />
                 </button>
@@ -98,7 +101,8 @@ export function DetailPortal({ postData, deselectPost }) {
               </div>
               <div className="DetailPortal--likes-container">
                 <span className="DetailPortal--likes">
-                  {formatLikes(postData.likes)} likes
+                  {formatLikes(postData.likes + (postData.postLiked ? 1 : 0))}{' '}
+                  likes
                 </span>
               </div>
               <div className="DetailPortal--timestamp-container">
